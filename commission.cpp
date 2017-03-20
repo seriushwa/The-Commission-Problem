@@ -18,6 +18,11 @@ int salary(int result)
 
 	return pay;
 }
+int commission(int lock,int stock,int barrel)
+{
+	return salary(sellResult(lock,stock,barrel));
+}
+
 
 TEST(sellResult,Boundary)
 {
@@ -387,21 +392,21 @@ EXPECT_EQ(0,salary(7805));
 TEST(TheCommissionProblem,Equivalence)
 {
 
-EXPECT_EQ(	20	,sellResult(	2	,	2	,	2	));
-EXPECT_EQ(	0	,sellResult(	0	,	2	,	2	));
-EXPECT_EQ(	0	,sellResult(	2	,	0	,	2	));
-EXPECT_EQ(	0	,sellResult(	2	,	2	,	0	));
-EXPECT_EQ(	0	,sellResult(	0	,	0	,	2	));
-EXPECT_EQ(	0	,sellResult(	0	,	2	,	0	));
-EXPECT_EQ(	0	,sellResult(	2	,	0	,	0	));
-EXPECT_EQ(	0	,sellResult(	0	,	0	,	0	));
-EXPECT_EQ(	0	,sellResult(	71	,	2	,	2	));
-EXPECT_EQ(	0	,sellResult(	2	,	81	,	2	));
-EXPECT_EQ(	0	,sellResult(	2	,	2	,	91	));
-EXPECT_EQ(	0	,sellResult(	71	,	81	,	2	));
-EXPECT_EQ(	0	,sellResult(	71	,	2	,	91	));
-EXPECT_EQ(	0	,sellResult(	2	,	81	,	91	));
-EXPECT_EQ(	0	,sellResult(	71	,	81	,	91	));
+EXPECT_EQ(	20	,commission(	2	,	2	,	2	));
+EXPECT_EQ(	0	,commission(	0	,	2	,	2	));
+EXPECT_EQ(	0	,commission(	2	,	0	,	2	));
+EXPECT_EQ(	0	,commission(	2	,	2	,	0	));
+EXPECT_EQ(	0	,commission(	0	,	0	,	2	));
+EXPECT_EQ(	0	,commission(	0	,	2	,	0	));
+EXPECT_EQ(	0	,commission(	2	,	0	,	0	));
+EXPECT_EQ(	0	,commission(	0	,	0	,	0	));
+EXPECT_EQ(	0	,commission(	71	,	2	,	2	));
+EXPECT_EQ(	0	,commission(	2	,	81	,	2	));
+EXPECT_EQ(	0	,commission(	2	,	2	,	91	));
+EXPECT_EQ(	0	,commission(	71	,	81	,	2	));
+EXPECT_EQ(	0	,commission(	71	,	2	,	91	));
+EXPECT_EQ(	0	,commission(	2	,	81	,	91	));
+EXPECT_EQ(	0	,commission(	71	,	81	,	91	));
 }
 
 
