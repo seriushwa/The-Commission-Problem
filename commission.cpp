@@ -11,9 +11,10 @@ int sellResult(int lock,int stock,int barrel)
 int salary(int result)
 {
 	int pay = 0;
-	if(result>1800)pay=(result-1800)*(20/100)+100+120;
-	else if(result>1000)pay=(result-1000)*(15/100)+100;
-	else pay=result*(10/100);
+	if(result<100 || result>7800)return 0;
+	if(result>1800)pay=(result-1800)*20/100+100+120;
+	else if(result>1000)pay=(result-1000)*15/100+100;
+	else pay=result*10/100;
 
 	return pay;
 }
@@ -377,9 +378,9 @@ TEST(Commission,Boundary)
 EXPECT_EQ(0,salary(95));
 EXPECT_EQ(10,salary(100));
 EXPECT_EQ(10,salary(105));
-EXPECT_EQ(395,salary(3950));
-EXPECT_EQ(779,salary(7795));
-EXPECT_EQ(780,salary(7800));
+EXPECT_EQ(650,salary(3950));
+EXPECT_EQ(1419,salary(7795));
+EXPECT_EQ(1420,salary(7800));
 EXPECT_EQ(0,salary(7805));
 }
 
