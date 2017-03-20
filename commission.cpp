@@ -3,8 +3,8 @@
 
 int sellResult(int lock,int stock,int barrel)
 {
-	if(lock<1 && stock<1 && barrel<1)return 0;
-	if(lock>70 && stock>80 && barrel>90)return 0;
+	if(lock<1 || stock<1 || barrel<1)return 0;
+	if(lock>70 || stock>80 || barrel>90)return 0;
 	
 	return lock*45+stock*30+barrel*25;
 }
